@@ -1,0 +1,31 @@
+desktop.ini
+CrystalDiskMark 8.lnk
+DSA
+Discord.lnk
+frontend masters.txt
+Frontend tools
+JDS
+Full-Stack
+job prompt .png
+Git Command directory.txt
+JavaScript Project
+JS Interview Questions Array String Hoisting.txt
+GIC
+JS_FSL
+JS Snippets
+MinGW Installer.lnk
+movieAPI.txt
+Major Project
+MySQLWorkbench.lnk
+NodeJS
+Postman.lnk
+React Questions for Interviews.docx
+React
+React_Rev
+Shortcut key for Vs Code.docx
+ST
+SQL
+MySQL
+Telegram.lnk
+Visual Studio Code.lnk
+Webex.lnk
