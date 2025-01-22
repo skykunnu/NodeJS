@@ -47,15 +47,32 @@ import fs from "fs"
 // })
 
 
-fs.readdir('../',(error,files)=>{
+// fs.readdir('../',(error,files)=>{
 
-fs.rm("dummy.txt",(error)=>{ // deleting the dummy.txt file
-    if(error) throw error;
-})
+// fs.rm("dummy.txt",(error)=>{ // deleting the dummy.txt file
+//     if(error) throw error;
+// })
 
-    files.forEach((name)=>{
-        fs.appendFile('dummy2.txt',name+"\n",(error)=>{ // creating the new file and appending each data of files to new file (dummy2.txt)
-            if (error) throw error
-        })
-    })
-})
+//     files.forEach((name)=>{
+//         fs.appendFile('dummy2.txt',name+"\n",(error)=>{ // creating the new file and appending each data of files to new file (dummy2.txt)
+//             if (error) throw error
+//         })
+//     })
+// })
+
+
+import { createServer } from 'node:http';
+
+const server = createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Hello World!\n');
+});
+
+
+
+// Browser se request will come to below and then it will go to create server as request and then server will send response as Hello world. 
+server.listen(3000, '127.0.0.1', () => {
+  console.log('Listening on 127.0.0.1:3000');
+});
+
+
