@@ -1,9 +1,6 @@
 import express from "express";
-import "dotenv/config";
-import mongoose  from "mongoose"
+// import "dotenv/config";
 
-//database connections
-mongoose.connect(process.env.MONGO_URL)
 
 // process is a ever-running process.
 
@@ -14,12 +11,14 @@ app.use(express.urlencoded({ extended: true }));
 const port = process.env.PORT; // we have used this becoz we are importing port No from .env file. 
 console.log(port);
 
-// const data = [
-//   { id: 1, name: "Shikhar" },
-//   { id: 2, name: "Rishi" },
-//   { id: 3, name: "Ranveer" },
-//   { id: 4, name: "Harry" },
-// ];
+const data = [
+  { id: 1, name: "Shikhar" },
+  { id: 2, name: "Rishi" },
+  { id: 3, name: "Ranveer" },
+  { id: 4, name: "Harry" },
+];
+
+// Below are the CRUD-(Create, read, update, delete) Operation.
 
 app.get("/", (req, res) => {
   res.status(200).send(data);
