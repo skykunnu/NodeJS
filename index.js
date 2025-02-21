@@ -1,119 +1,132 @@
-// Basic of file system:- 
+// Basics of file system:
+
+// callback API.
+import fs from "fs";
 
 
-// callback API. 
+// 3 ways to create a file -> fs.writeFile(), fs.open(), fs.appendFile()
 
-import fs from "fs"
+/* Why error is passed as an argument to these callback functions? 
 
-// 3 ways to create a file -> fs.writeFile(), fs.open(), fs.appendFile() 
+ It is because they follow error-first callback function convention. meaning these callback functions doesn't need to return any additional data other than whether it succeeded or failed. if there is error then error will returned else nothing. this makes error handling simple and consistent. 
 
-// ⁡⁣⁣⁢fs.writeFile()-> It is used to create & write data to a file. If the file already exists, it overwrites the entire contents. If the file doesn't exist, it creates a new one, it takes 3 arguments file path, data to write, callback fn.⁡
+*/
 
 
-// fs.writeFile("dummy.txt",'hello_world',(error)=>{
-//   if(error){
+
+
+// ⁡⁣⁢⁣fs.writeFile()⁡
+
+// ⁡⁣⁣⁢It is used to create & write data to a file. If the file already exists, it overwrites the entire contents.⁡
+
+// fs.writeFile("dummy.txt", 'hello_world', (error) => {
+//   if (error) {
 //     console.log(error);
-//   }  
-//   else{
+//   } else {
 //     console.log('File is created.');
 //   }
-// })
+// });
 
+// ⁡⁣⁢⁣fs.open()⁡
 
-// ⁡⁣⁣⁢fs.open()-> It is used to open a file that takes 3 arguments file path,  flag (w-write,r-reading(default),a-append), callback fn.⁡ 
+// ⁡⁣⁣⁢It is used to open a file that takes 3 arguments: file path, flag (w-write, r-read, a-append), callback function.⁡
 
-// fs.open('dummy.txt','w',(error,file)=>{
-//     if(error) throw error;
-//     console.log("new file created");
-// })
+// fs.open('dummy.txt', 'w', (error, file) => {
+//   if (error) throw error;
+//   console.log("New file created");
+// });
 
+// ⁡⁣⁢⁣fs.appendFile()⁡
 
-// ⁡⁣⁣⁢fs.appendFile()-> It appends specified content to an existing file. if the file does'nt exist, then a new file will be created. it will take 3 arguments file path, data to append, callback fun.⁡ 
+// ⁡⁣⁣⁢It appends specified content to an existing file. If the file doesn't exist, a new file will be created.⁡
 
 // fs.appendFile('dummy.txt', 'Hello content!', function (err) {
-//     if (err) throw err;
-//     console.log('Saved!');
-//   });
+//   if (err) throw err;
+//   console.log('Saved!');
+// });
 
 
-// ⁡⁣⁣⁢fs.rename() -> It renames the existing file with new file name. it will take 3 arguments file path, new file path, callback function.⁡ 
+// ⁡⁣⁢⁣fs.rename()⁡
+// ⁡⁣⁣⁢Renames the existing file with a new file name.⁡
 
-// fs.rename("dummy.txt","NodeBasic.txt",function(error){
-//   if(error) throw error;
-
-//   else{
-//     console.log("file renamed");
-//   }
-// })
+// fs.rename("dummy.txt", "NodeBasic.txt", function (error) {
+//   if (error) throw error;
+//   console.log("File renamed");
+// });
 
 
-// ⁡⁣⁣⁢fs.copyFile() -> It copies the data of one file into another file inside a folder. it takes 3 arguments file path, ./folderName/newfile path, callback function.⁡ 
+// ⁡⁣⁢⁣fs.copyFile()⁡
 
-// In Below code, data inside Hey.txt file will get copied into Hey2.txt file that is present inside copy folder. copy folder was first created then only it will run.  
+// ⁡⁣⁣⁢Copies data from one file to another.⁡
 
-// fs.copyFile("Hey.txt", "./copy/Hey2.txt", function(error){
-//   if(error){
-//     console.log(error)
-//   }
-//   else {
-//     console.log('Hey2 is created in copy folder.')
-//   }
-// } )
-
-// ⁡⁣⁣⁢fs.unlink()-> It is used to delete a file.⁡ 
-
-// fs.unlink("Hey.txt", function(error){
-//   if(error){
+// fs.copyFile("Hey.txt", "./copy/Hey2.txt", function (error) {
+//   if (error) {
 //     console.log(error);
+//   } else {
+//     console.log('Hey2 is created in the copy folder.');
 //   }
-//   else{
-//     console.log("Hey.txt is deleted.")
-//   }
-// })
+// });
 
-// ⁡⁣⁣⁢fs.rm()-> means remove directory it is used to delete a folder. By default it allows you to delete a blank folder but no a folder containing files.⁡ 
+// ⁡⁣⁢⁣fs.unlink()⁡
+// ⁡⁣⁣⁢Deletes a file.⁡
 
-// fs.rm('./copy',{recursive:true},function(error){
-//   if(error){
+// fs.unlink("Hey.txt", function (error) {
+//   if (error) {
 //     console.log(error);
+//   } else {
+//     console.log("Hey.txt is deleted.");
 //   }
-//   else{
-//     console.log("./copy folder is removed.")
+// });
+
+// ⁡⁣⁢⁣fs.rm()⁡
+// ⁡⁣⁣⁢Deletes a folder. By default, it allows deleting only blank folders.⁡
+
+// fs.rm('./copy', { recursive: true }, function (error) {
+//   if (error) {
+//     console.log(error);
+//   } else {
+//     console.log("./copy folder is removed.");
 //   }
-// })
+// });
 
 
+// ⁡⁣⁢⁣fs.readdir()⁡
+// ⁡⁣⁣⁢Reads the contents of a directory.⁡
+
+// fs.readdir('./', function (error, files) {
+//   if (error) {
+//     console.log(error);
+//   } else {
+//     console.log("Directory contents:", files);
+//   }
+// });
 
 
-// ⁡⁣⁣⁢fs.readdir()-> it is a method used to read the contents of directory. it returs an array of fileName or object from a specified path.it takes 2 argument file path and a callback function.⁡
+// fs.readFile() 
+// It will read the 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// Creating a Server 
-
-
-import { createServer } from 'node:http';
-
-const server = createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('Hello World!\n');
+fs.readFile('dummy.txt', 'utf8', (err, data) => {
+  if (err) {
+    console.error('Error reading file:', err);
+  } else {
+    console.log('File contents:', data);
+  }
 });
 
 
 
-// Browser se request will come to below and then it will go to create server as request and then server will send response as Hello world. 
-server.listen(3000, '127.0.0.1', () => {
-  console.log('Listening on 127.0.0.1:3000');
-});
 
 
+
+// ⁡⁣⁢⁣⁡⁣⁢⁣Creating a server⁡ 
+
+// import { createServer } from 'node:http';
+
+// const server = createServer((req, res) => {
+//   res.writeHead(200, { 'Content-Type': 'text/plain' });
+//   res.end('Hello World!\n');
+// });
+
+// server.listen(3000, '127.0.0.1', () => {
+//   console.log('Listening on 127.0.0.1:3000');
+// });

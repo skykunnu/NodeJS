@@ -21,3 +21,22 @@
 
 -> Node.js supports both the commonJS(require()) and ES module systems (import)
 
+
+-> ⁡⁣⁢⁣Dependencies⁡- These are the packages that are essential for the core functionality of the application.
+For ex- If you are using Express to build the web server, it should be listed under dependencies because it's needed to run the app. 
+
+
+
+-> ⁡⁣⁢⁣Dev Dependencies⁡- These are those packages that are only needed during development but are not necessary for running the application in production. ex- ESLint(linter), Jest(testing framework) & nodemon so on.  
+
+
+# What is a framework
+
+-> It is a collection of pre-written code that provides a structured way to develop software application. 
+
+- The framework is itself in control of the application flow. Instead of you calling the framework, it calls your code at specific points. 
+
+# Express.js -> it is a Framework 
+
+-> It is an npm package to build the web server. 
+-> it manages everything from receiving the request and giving the response. 

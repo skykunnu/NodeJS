@@ -1,2 +1,60 @@
 HTTP -> Hyper Text Transfer Protocol.
 
+=> It is an application layer protocol for transmitting hypermedia documents, such as HTML.
+It was designed for communication between web browsers and web servers, but it can also be used for other purposes. 
+
+=> HTTP follows a classical client-server model, 
+
+=> HTTP is a stateless protocol, meaning that the server does not keep any data (state) between two requests. 
+means as soon as the client receives the response Http disconnect itself from the server. 
+
+=> HTTP is a client-server Protocol.
+
+=> Between the client and the server there are numerous entities, collectively called proxies,
+which perform different operations and act as caches or gateways.
+
+=> When a client wants to communicate with a server, either the final server or intermediate proxy
+it performs the following steps:
+
+1. ⁡⁣⁣⁢Open a TCP connection⁡: A TCP connection is used to send a request and receive an answer. 
+
+2. ⁡⁣⁣⁢Send an HTTP message⁡: HTTP messages before HTTP/2 are human-readable. 
+with HTTP/2, these simple messages are encapsulted in frames, making them impossible to read directly.
+
+
+
+# ⁡⁣⁢⁣HTTP Resources⁡ 
+
+=> The target of an HTTP request is called a "resource", whose nature isn't defined further
+it can be a document, a photo, or anything else. 
+Each resource is identified by a uniform resource identifier. 
+
+=> ⁡⁣⁣⁢The most common form of URI is the Uniform Resource Locator(URL).⁡ which is known as web address.
+
+ex-> http://www.example.com:80/path/to/myfile.html?Key1=value1&key2=value2
+
+=> In above example (http://) is the protocol. It indicates which protocol the browser must use. 
+Usually it is the HTTP protocol or its secured version, HTTPS.
+
+=> The web requires one of these two, but it also know how to handle other protocols such as FTP, SMTP and so on. 
+
+=> In above example (www.example.com) means Domain name. 
+
+=> (:80) is a port no. It indicates the technical gate used to access the resources on the web server. 
+
+=> /path/file.html is the path to the resources on the web server. 
+
+=> (?Key=value1&key2=value2) are the query parameters that are used by web server to do extra stuff before returning the resource to the user. 
+
+
+# ⁡⁣⁢⁣HTTP Messages⁡
+
+=> HTTP Methods (GET, PUT, POST, PATCH, Delete)
+
+
+
+
+
+
+
+
