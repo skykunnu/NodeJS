@@ -105,13 +105,13 @@ import fs from "fs";
 // fs.readFile() 
 // It will read the 
 
-fs.readFile('dummy.txt', 'utf8', (err, data) => {
-  if (err) {
-    console.error('Error reading file:', err);
-  } else {
-    console.log('File contents:', data);
-  }
-});
+// fs.readFile('dummy.txt', 'utf8', (err, data) => {
+//   if (err) {
+//     console.error('Error reading file:', err);
+//   } else {
+//     console.log('File contents:', data);
+//   }
+// });
 
 
 
@@ -120,13 +120,15 @@ fs.readFile('dummy.txt', 'utf8', (err, data) => {
 
 // ⁡⁣⁢⁣⁡⁣⁢⁣Creating a server⁡ 
 
-// import { createServer } from 'node:http';
+// As soon as you write 127.0.0.1:3000 on the search bar and enter. on browser you will see Hello world gets display. 
 
-// const server = createServer((req, res) => {
-//   res.writeHead(200, { 'Content-Type': 'text/plain' });
-//   res.end('Hello World!\n');
-// });
+import { createServer } from 'node:http';
 
-// server.listen(3000, '127.0.0.1', () => {
-//   console.log('Listening on 127.0.0.1:3000');
-// });
+const server = createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Hello World!\n');
+});
+
+server.listen(3000, '127.0.0.1', () => {
+  console.log('Listening on 127.0.0.1:3000');
+});
