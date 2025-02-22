@@ -5,8 +5,8 @@ It was designed for communication between web browsers and web servers, but it c
 
 => HTTP follows a classical client-server model, 
 
-=> HTTP is a stateless protocol, meaning that the server does not keep any data (state) between two requests. 
-means as soon as the client receives the response Http disconnect itself from the server. 
+=> HTTP is a stateless protocol, meaning each request from a client to a server is independent and does not retain any information 
+about previous requests. 
 
 => HTTP is a client-server Protocol.
 
