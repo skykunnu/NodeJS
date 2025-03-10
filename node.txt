@@ -1,0 +1,5 @@
+Node.js is a runtime application and library used to run web application outside of the browser. 
+
+Node.js is used for server-side programming means used to build backend API services.
+
+Node.js is well suited for building microservices environment where an application is broken into smaller services that communicate with each other. 

@@ -122,13 +122,13 @@ import fs from "fs";
 
 // As soon as you write 127.0.0.1:3000 on the search bar and enter. on browser you will see Hello world gets display. 
 
-import { createServer } from 'node:http';
+// import { createServer } from 'node:http';
 
-const server = createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('Hello World!\n');
-});
+// const server = createServer((req, res) => {
+//   res.writeHead(200, { 'Content-Type': 'text/plain' });
+//   res.end('Hello World!\n');
+// });
 
-server.listen(3000, '127.0.0.1', () => {
-  console.log('Listening on 127.0.0.1:3000');
-});
+// server.listen(3000, '127.0.0.1', () => {
+//   console.log('Listening on 127.0.0.1:3000');
+// });

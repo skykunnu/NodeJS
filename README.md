@@ -14,6 +14,30 @@
 
 -> Build apps with node.js like Netflix, chatApp, paymentsApp, RestApi and so on. 
 
+
+# Commands to setup node backend
+
+1. npm init -y 
+
+2. npm i -g nodemon - to  Automatic restart backend server on code changes. 
+
+3. npm i express - to download express environment.
+
+4. npm i mongoose - to download database. 
+
+5. 
+
+
+
+
+
+
+
+
+
+
+
+
 # Nodejs vs Browser
 
 -> With Browser we have access to DOM, Web API where as with Node.js we have modules provide to access to file system, OS. 
