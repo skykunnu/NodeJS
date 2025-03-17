@@ -1,3 +1,54 @@
+# MongoDb is a non relational or NoSQL database that stores data in a flexible, JSON-like format called BSON (Binary JSON).
+
+# Why MongoDb uses BSON over JSON
+-> Faster Read & Write means Binary data can be processed more quickly than JSON.
+-> It supports additional data types like Dates, 64-bit integer, binary data (images & files).
+-> Efficient storage and indexing.
+
+
+# Few Key points to remember when dealing with mongoDb
+
+>  MongoDB is a non-Relational database or NoSQL database. the main difference when compared to a SQL database is you're not able to use joins to connect your database tables instead However we can use references to link between our varioius documents in mongodb. 
+
+> Instead of using table in sql, we use documents in mongoDb.These documents are structured into BSON similar to JSON only. 
+
+>  The main advantages of using MongoDB over Traditional SQL are
+
+1. Easy Schema Iteration
+2. Scalability and performance
+3. Object Oriented. 
+
+> Agile development - Accomodates large volumes of rapidly changing structured, semi-structured and unstructured data.
+
+# Document vs Collection
+
+> Document is a record in a MongoDb collection and the basic unit of data in MongoDB. documents look like JSON but exist as BSON. 
+ex- 
+{
+    "_id":ObjectId("55923849e9493"),
+    "title":"Article two",
+    "categories": "Education",
+}
+
+> Collection is a grouping of all documents. typically all documents in a collection have similar or a related purpose.
+
+ex- 
+
+{
+    "_id":ObjectId("55923849e94933434"),
+    "title":"Article one",
+    "categories": "Travel",
+}
+{
+    "_id":ObjectId("55923849e94932324"),
+    "title":"Article two",
+    "categories": "Health Care",
+}
+
+
+
+// Following are the commands in MongoDB. 
+
 show dbs - shows all databases (Dbs with no collections are not shown)
 
 use {dbname} - to create new database
@@ -10,7 +61,7 @@ show collections - Shows the collections in the current database
 
 db.collectionName.drop() - To drop(delete) the collection
 
-db.dropDatabase() - To drop(delete) the databse
+db.dropDatabase() - To drop(delete) the database.
 
 
 Insert One Row: (Deprecated)
@@ -29,16 +80,16 @@ db.collectionName.insertOne({
     'phone': 1234567890 
 })
 
-db.collectionName.insertMany(
+db.collectionName.insertMany([
     { name: "Ram", phone: 12345 },
     { name: "Shyam", phone: 54321 },
     { name: "Seeta" , phone: 12123 }
 ])
 
-db.collectionName.find() - The find() method with no parameters returns all documents from a collection and returns all fields for the documents.
+db.collectionName.find() - The find() method with no parameters returns all of the documents that we have added to our collection.
 
 
-db.collectionName.findOne({name: 'Rohit'}) - Find the first row matching the object
+db.collectionName.findOne({name: 'Rohit'}) - Find the first row matching the object.
 
 
 db.collectionName.find({name:'Seeta'})
