@@ -8,7 +8,7 @@
 
 # Few Key points to remember when dealing with mongoDb
 
->  MongoDB is a non-Relational database or NoSQL database. the main difference when compared to a SQL database is you're not able to use joins to connect your database tables instead However we can use references to link between our varioius documents in mongodb. 
+>  MongoDB is a non-Relational database or NoSQL database. the main difference when compared to a SQL database is you're not able to use joins to connect your database tables instead However we can use references to link between our various documents in mongodb. 
 
 > Instead of using table in sql, we use documents in mongoDb.These documents are structured into BSON similar to JSON only. 
 
@@ -34,11 +34,14 @@ ex-
 
 ex- 
 
+// doc1
 {
     "_id":ObjectId("55923849e94933434"),
     "title":"Article one",
     "categories": "Travel",
 }
+
+// doc2
 {
     "_id":ObjectId("55923849e94932324"),
     "title":"Article two",
@@ -48,6 +51,8 @@ ex-
 
 
 // Following are the commands in MongoDB. 
+
+cls - to clear the screen
 
 show dbs - shows all databases (Dbs with no collections are not shown)
 
@@ -62,6 +67,7 @@ show collections - Shows the collections in the current database
 db.collectionName.drop() - To drop(delete) the collection
 
 db.dropDatabase() - To drop(delete) the database.
+
 
 
 Insert One Row: (Deprecated)
@@ -88,6 +94,10 @@ db.collectionName.insertMany([
 
 db.collectionName.find() - The find() method with no parameters returns all of the documents that we have added to our collection.
 
+db.collectionName.find().pretty()- returns all the documents in the form of an object having properties in key-value pair form. 
+
+
+# find() with arguments.
 
 db.collectionName.findOne({name: 'Rohit'}) - Find the first row matching the object.
 
@@ -126,4 +136,40 @@ db.collectionName.find(
 ) 
 //name.last field starts with the letter N (or is "LIKE N%")
 
-cls - to clear the screen
+# Update an exisiting data in the collection by using $set key:-
+
+here cars is a name of a collection. 
+ex- db.cars.insert({name:"Mercedes",make:"E-class",year:"2024"})
+
+now lets say we have to change the name .
+
+> db.cars.update({name:"Mercedes"},{$set:{name:"BMW"}})
+
+so when you run the command again db.cars.find().pretty()
+
+> You can see the name has changed from "Mercedes" to "BMW".
+
+  {
+    _id: ObjectId('67d871c9c231150e71cb0ce4'),
+    name: 'BMW',
+    make: 'E-class',
+    year: '2024'
+  }
+
+# Update an exisiting data by adding a new property in the collection using $upsert key:-
+
+> db.cars.update({name:"Mercedes"},{$set:{transmission:"automatic"}},{$upsert:true})
+
+After running above query the result would look like 
+
+{
+    _id: ObjectId('67d871c9c231150e71cb0ce4'),
+    name: 'BMW',
+    make: 'E-class',
+    year: '2024',
+    transmission: 'automatic'
+}
+
+
+
+
